@@ -1,17 +1,18 @@
-package com.example.WebSocket;
+package com.example.WebSocket.controller;
 
+import com.example.WebSocket.entity.User;
+import com.example.WebSocket.entity.Message;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.util.HtmlUtils;
 
 @Controller
-public class GreetingController {
+public class UserController {
     @MessageMapping("/hello")
-    @SendTo("/topic/greetings")
-    public Greetings greet(Message message) throws InterruptedException {
-        Thread.sleep(2000);
-        return new Greetings("Welcome, " +
+    @SendTo("/topic/users")
+    public User users(Message message) throws InterruptedException {
+        return new User("Welcome, " +
                 HtmlUtils.htmlEscape(message.getName()));
     }
 }

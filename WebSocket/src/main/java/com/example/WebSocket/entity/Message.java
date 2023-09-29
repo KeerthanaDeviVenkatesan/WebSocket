@@ -1,4 +1,4 @@
-package com.example.WebSocket;
+package com.example.WebSocket.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Greetings {
-    private String message;
+public class Message {
+    private String name;
 }
