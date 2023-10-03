@@ -12,7 +12,7 @@ public class UserController {
     @MessageMapping("/hello")
     @SendTo("/topic/users")
     public User users(Message message) throws InterruptedException {
-        return new User("Hello!!, " +
-                HtmlUtils.htmlEscape(message.getName()));
+        return new User("Hello!!,    " +
+                HtmlUtils.htmlEscape(message.getName())+".....");
     }
 }
