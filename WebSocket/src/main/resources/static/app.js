@@ -11,7 +11,6 @@ function setConnected(connected) {
     }
     $("#users").html("");
 }
-
 function connect() {
     var socket = new SockJS('/endpoint');
     stompClient = Stomp.over(socket);
@@ -23,7 +22,6 @@ function connect() {
         });
     });
 }
-
 function disconnect() {
     if (stompClient !== null) {
         stompClient.disconnect();
